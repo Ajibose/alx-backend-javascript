@@ -1,6 +1,6 @@
 export default function cleanSet(set, startString) {
   let resultString = '';
-  if (!startString) {
+  if (!startString || typeof startString !== 'string') {
     return '';
   }
   const idx = startString.length;
