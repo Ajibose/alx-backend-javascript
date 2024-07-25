@@ -15,7 +15,7 @@ function countStudents(path) {
     const noOfStudents = contentList.length;
     console.log(`Number of students: ${noOfStudents}`);
     Object.entries(fields).forEach(([key, value]) => {
-      console.log(`Number of students in ${key}: ${value.length}. List: ${value.join(', ')}`);
+      console.log(`Number of students in ${key}: ${value.length}. List: ${value}`);
     });
   } catch (err) {
     if (err.code === 'ENOENT') {
