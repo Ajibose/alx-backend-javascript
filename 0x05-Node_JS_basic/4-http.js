@@ -3,7 +3,7 @@ const { createServer } = require('node:http');
 const app = createServer((req, resp) => {
   /* eslint-disable no-param-reassign */
   resp.statusCode = 200;
-  resp.setHeader('Content-Type', 'text/palin');
+  resp.setHeader('Content-Type', 'text/plain');
   resp.end('Hello Holberton School!');
   /* eslint-enable no-param-reassign */
 });
