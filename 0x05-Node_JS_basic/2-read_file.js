@@ -27,7 +27,7 @@ function countStudents(fileName) {
     console.log(`Number of students: ${l}`);
     for (const [key, value] of Object.entries(fields)) {
       if (key !== 'field') {
-        console.log(`Nmber of students in ${key}: ${value}. List: ${students[key].join(', ')}`);
+        console.log(`Number of students in ${key}: ${value}. List: ${students[key].join(', ')}`);
       }
     }
   } catch (error) {
