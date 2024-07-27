@@ -1,4 +1,4 @@
-const { createServer } = require('node:http');
+const { createServer } = require('http');
 
 const app = createServer((req, resp) => {
   /* eslint-disable no-param-reassign */
@@ -9,6 +9,6 @@ const app = createServer((req, resp) => {
   /* eslint-enable no-param-reassign */
 });
 
-app.listen(1245, '127.0.0.1', () => console.log('Server running at http://127.0.0.1:1245/'));
+app.listen(1245, '127.0.0.1', () => {});
 
 module.exports = app;
