@@ -5,7 +5,7 @@ const app = createServer((req, resp) => {
   /* eslint-disable no-param-reassign */
   resp.writeHead(200, { 'Content-Type': 'text/plain' });
   if (resp.url === '/') {
-    resp.write('Hello Holberton Schoo!');
+    resp.write('Hello Holberton School!');
   } else if (resp.url === '/students') {
     resp.write('This is the list of our students');
     countStudents(database.csv);
