@@ -53,7 +53,7 @@ app.get('/students', (req, res) => {
   countStudents(process.argv[2]).then((data) => {
     res.status(200).send(`This is the list of our students\n${data.slice(0, -1)}`);
   }).catch(() => {
-    res.status(404).send('Cannot load database');
+    res.status(404).send('Cannot load the database');
   });
 });
 
