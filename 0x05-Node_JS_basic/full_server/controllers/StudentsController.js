@@ -3,7 +3,7 @@ import readDatabase from '../utils.js'
 class StudentsController {
   static getAllStudents(request, response) {
     let str = ''
-    readDatabase('./database.csv').then((data) => {
+    readDatabase(process.argv[2]).then((data) => {
       for (const [field, students] of Object.entries(data)) {
         str += `\nNumber of students in ${field}: ${students.length}. List: ${students.join(', ')}`;
       }
@@ -17,7 +17,7 @@ class StudentsController {
       response.status(500).send('Major parameter must be CS or SWE');
     }
 
-    readDatabase('./database.csv').then((data) => {
+    readDatabase(process.argv[2]).then((data) => {
       const fieldStudents = data[field];
       response.status(200).send(`List: ${fieldStudents.join(', ')}`);
     }).catch(() => { response.status(500).send('Cannot load the database'); });
