@@ -8,7 +8,7 @@ class StudentsController {
         str += `\nNumber of students in ${field}: ${students.length}. List: ${students.join(', ')}`;
       }
       response.status(200).send(`This is the list of our students${str}`);
-    }).catch(() => { response.status(500).send('Cannot load the database'); });
+    }).catch(() => { response.status(500).send(new Error('Cannot load the database')); });
   }
 
   static getAllStudentsByMajor(request, response) {
@@ -20,7 +20,7 @@ class StudentsController {
     readDatabase('./database.csv').then((data) => {
       const fieldStudents = data[field];
       response.status(200).send(`List: ${fieldStudents.join(', ')}`);
-    }).catch((err) => { response.status(500).send('Cannot load the database'); });
+    }).catch((err) => { response.status(500).send(new Error('Cannot load the database')); });
   }
 }
 
