@@ -1,8 +1,8 @@
-import readDatabase from '../utils.js'
+import readDatabase from '../utils';
 
 class StudentsController {
   static getAllStudents(request, response) {
-    let str = ''
+    let str = '';
     readDatabase(process.argv[2]).then((data) => {
       for (const [field, students] of Object.entries(data)) {
         str += `\nNumber of students in ${field}: ${students.length}. List: ${students.join(', ')}`;
@@ -24,4 +24,4 @@ class StudentsController {
   }
 }
 
-export default StudentsController
+export default StudentsController;

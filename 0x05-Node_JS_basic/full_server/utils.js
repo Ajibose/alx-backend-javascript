@@ -1,16 +1,16 @@
-import { readFile } from 'fs'
+import { readFile } from 'fs';
 
 export default function readDatabase(filePath) {
   return new Promise((resolve, reject) => {
     readFile(filePath, 'utf8', (err, data) => {
       if (err) {
         reject(err);
-        return
+        return;
       }
       const studentsField = {};
       const studentData = data.trimEnd().split('\n').slice(1);
       for (const student of studentData) {
-        let [firstName, , , field] = student.split(',');
+        const [firstName, , , field] = student.split(',');
         if (field in studentsField) {
           studentsField[field].push(firstName);
         } else {
@@ -19,7 +19,7 @@ export default function readDatabase(filePath) {
       }
       resolve(studentsField);
     });
-  })
+  });
 }
 
 // readDatabase('../database.csv').then((data) => {
