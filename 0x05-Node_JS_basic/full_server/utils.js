@@ -5,7 +5,7 @@ export default function readDatabase(filePath) {
     readFile(filePath, 'utf8', (err, data) => {
       if (err) {
         reject(err);
-        return;
+        return
       }
       const studentsField = {};
       const studentData = data.trimEnd().split('\n').slice(1);
